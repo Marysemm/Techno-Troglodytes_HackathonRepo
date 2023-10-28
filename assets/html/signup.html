@@ -1,39 +1,52 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/normalize.css" />
+    <link rel="stylesheet" href="../styles/signup.css" />
     <title>Регистрация</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="wrapper">
-        <div class="personal-account">
-            <h2>Регистрация</h2>
-            <form onsubmit="signup(event)">
-                <div>
-                    <input type="text" name="" placeholder="Full Name" id="fullname">
-                </div>
-                <div>
-                    <input type="text" name="" placeholder="Email" id="email">
-                </div>
-                <div>
-                    <input type="password" name="" placeholder="Password" id="password">
-                </div>
-                <div>
-                    <input type="password" name="" placeholder="Confirm Password" id="copassword">
-                </div>
-                <div>
-                    <button id="signupinp" value="Регистрация" class="btn">Регистрация</button>
-                    <div class="member">
-                        Уже зарегистрированы? <a href="/assets/html/login.html">Войти!</a>
-                    </div>
-                </div>
-            </form>
-        </div>
+      <div class="personal-account">
+        <h2>Регистрация</h2>
+        <form onsubmit="signup(event)">
+          <div>
+            <input type="text" name="" placeholder="Full Name" id="fullname" />
+          </div>
+          <div>
+            <input type="text" name="" placeholder="Email" id="email" />
+          </div>
+          <div>
+            <input
+              type="password"
+              name=""
+              placeholder="Password"
+              id="password"
+            />
+          </div>
+          <div>
+            <input
+              type="password"
+              name=""
+              placeholder="Confirm Password"
+              id="copassword"
+            />
+          </div>
+          <div>
+            <button id="signupinp" value="Регистрация" class="btn">
+              Регистрация
+            </button>
+            <div class="member">
+              Уже зарегистрированы?
+              <a href="./assets/html/login.html">Войти!</a>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-</body>
-<script src="/assets/scripts/app.js" type="module"></script>
+  </body>
+  <script src="./assets/scripts/app.js" type="module"></script>
 </html>
