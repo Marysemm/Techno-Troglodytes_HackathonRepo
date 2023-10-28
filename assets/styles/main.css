@@ -1,0 +1,19 @@
+.menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu__list {
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+}
+
+.menu__list-items {
+    display: flex;
+}
+
+.menu__list-item {
+    list-style: none;
+    padding-inline: 10px;
+}
