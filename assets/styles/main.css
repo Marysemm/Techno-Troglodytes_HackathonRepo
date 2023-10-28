@@ -85,3 +85,17 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
 }
+.main-section__aplication{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10%;
+    margin-top: 10%;
+    width: 100%;
+    margin-left: 10%;
+}
+#img-main{
+    display:grid;
+    width:108px;
+    border-radius:10px;
+}
