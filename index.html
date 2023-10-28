@@ -10,44 +10,56 @@
 
   <body>
     <div class="container">
-      <header class="header">
-        <nav class="menu">
-          <div class="app-logo">
-            <a href="index.html"
-              ><img
-                class="logo_icon"
-                src="./assets/icons/icon-cat.png"
-                alt="icon for account"
-            /></a>
-          </div>
-          <div class="menu__list">
-            <ul class="menu__list-items">
-              <li class="menu__list-item">
-                <a href="" class="menu__link">Цели</a>
-              </li>
-              <li class="menu__list-item">
-                <a href="" class="menu__link">Проект</a>
-              </li>
-              <li class="menu__list-item">
-                <a href="" class="menu__link">О нас</a>
-              </li>
-            </ul>
-            <div class="personal-account_icon">
-              <a href="./assets/html/signup.html"
-                ><img
-                  class="account_icon"
-                  src="./assets/icons/pers-icon-40.png"
-                  alt="icon for account"
-              /></a>
+        <header class="header">
+            <nav class="menu">
+                <div class="app-logo">
+                    <a href="index.html"><img class="logo_icon" src="/assets/logo/photo_2023-10-28_19-15-02.jpg"
+                        alt="icon for account"></a>
+                </div>
+                <div class="menu__list">
+                    <ul class="menu__list-items">
+                        <li class="menu__list-item"><a href="" class="menu__link">Цели</a></li>
+                        <li class="menu__list-item"><a href="" class="menu__link">Проект</a></li>
+                        <li class="menu__list-item"><a href="" class="menu__link">О нас</a></li>
+                    </ul>
+                    <div class="personal-account_icon">
+                        <a href="/assets/html/signup.html"><img class="account_icon" src="/assets/icons/pers-icon-40.png"
+                                alt="icon for account"></a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!--Главная Страница-->
+        <main class="main">
+            <div class="main-header">
+                <h1 class="main-header__text">В чем магия приложения PomiDori?</h1>
             </div>
-          </div>
-        </nav>
-      </header>
-
-      <main class="main">
-        <h1>Классный заголовок</h1>
-        <p>Что-то написано</p>
-      </main>
+            
+            <div class="main-blocks">
+                <div class="main-block1">
+                    <p class="main block1-text">
+                        <br>PomiDori - это  простое волшебство! Удобный инструмент для работы с тасками, можно управлять своим временем и отслеживать успехи. Цель помочь пользователям эффективно управлять своими задачами и больше посвящать время себе.
+                    </p>
+                        Что PomiDori умеет:
+                    
+                        <p> 1. Создает задачи: Можно задать их название, описание и сроки выполнения. Это позволяет им четко структурировать свои обязанности и планировать.
+                        </p>
+                        2. Установка приоритетов: Можно пометить каждую задачу, чтобы показать ее приоритет. Это помогает оптимизировать свою продуктивность и сосредоточиться.
+                        <p>
+                        3. Отслеживание времени: Приложение отслеживает время. Это помогает оценить свою производительность,где можно улучшить свою эффективность.</p>
+                        <p>
+                        4. Удаление по выполнению: После завершения задания можно удалить таск из списка активных задач. Это помогает им поддерживать порядок и четкость.
+                        </p>
+                    </p>
+                </div>
+                <div class="main-block2">
+                    <img class="img-tired" src="assets/images/tired_witch.jpg">
+                    <button class="main__button" onclick="changeImage()" href="#">
+                        <span class="button__text_main">Мастер задач</span>
+                    </button>
+                </div>
+            </div>
+        </main>
     </div>
   </body>
 </html>
