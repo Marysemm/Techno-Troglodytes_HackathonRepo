@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/styles/userPage.css">
+  <title>Личный аккаунт</title>
+</head>
+
+<body>
+  <div style="text-align: right">
+    <input type="button" value="logout" class="btn" onclick="logout()" id="logo">
+  </div>
+  <div class="main">
+    <h1>Привет!<span id="user"> </span> <span class="text">Запиши свою задачу!</span></h1>
+  </div>
+  <div class="main">
+    <form action="#">
+      <div>
+        <input type="text" id="title" placeholder="Название задачи">
+        <br>
+        <input type="text" id="description" placeholder="Описание">
+        <br>
+        <button value="Добавить" class="btn" id="add-btn">Добавить задачу</button>
+      </div>
+    </form>
+  </div>
+  <div id="tasks-container"></div>
+</body>
+
+<!-- <script src="/assets/scripts/user.js" type="module"></script> -->
+<script src="/assets/scripts/notes.js" type="module"></script>
+
+</html>

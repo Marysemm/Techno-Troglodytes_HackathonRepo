@@ -1,0 +1,77 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main {
+    width: 500px;
+    padding: 10px;
+    margin: auto;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+    font-size: 1em;
+}
+
+.btn {
+    background-color: rgb(221, 237, 100);
+    color: rgb(0, 0, 0);
+    border: none;
+    transition: 0.8s ease;
+    cursor: pointer;
+}
+
+li {
+    padding: 10px;
+    margin-bottom: 5px;
+    border-bottom: 1.5px solid rgb(178, 26, 26);
+}
+
+.text {
+    color: rgb(120, 23, 217);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.label {
+    font-size: 0.7em;
+    color: grey;
+}
+
+#del {
+    background-color: rgb(221, 255, 127);
+    margin-top: 1.8rem;
+    padding: 10px 0;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    width: 50%;
+    transition: 0.8s ease;
+}
+
+#edit {
+    background-color: rgb(221, 255, 127);
+    margin-top: 1.8rem;
+    padding: 10px 0;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    width: 50%;
+    transition: 0.8s ease;
+}
+
+#edit:hover {
+    background-color: cornflowerblue;
+}
+
+#del:hover {
+    background-color: cornflowerblue;
+}
+
+#logo:hover {
+    background-color: hotpink;
+}
+
+#sibtn:hover {
+    background-color: cornflowerblue;
+}
