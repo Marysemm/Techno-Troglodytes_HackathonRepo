@@ -60,9 +60,9 @@ function displayTasks() {
         taskItem.classList.add("grid-wrap");
         taskItem.innerHTML = `
         <div class="${isDoneClass}">
-        <h3>${task.title}</h3>
-        <p>${task.description}</p>
-        <p>${task.duration}</p>
+        <h3 class="task-title">${task.title}</h3>
+        <p class="task-description">${task.description}</p>
+        <p class="task-duration">${task.duration}</p>
         <button class="delete-button">Удалить</button></div>`;
         tasksContainer.appendChild(taskItem);
 
