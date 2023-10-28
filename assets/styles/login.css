@@ -1,0 +1,133 @@
+::-webkit-input-placeholder {
+  font-size: 0.8rem;
+}
+::-moz-placeholder {
+  font-size: 0.8rem;
+}
+:-ms-input-placeholder {
+  font-size: 0.8rem;
+}
+:-moz-placeholder {
+  font-size: 0.8rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  background: linear-gradient(to bottom, #2ad1ffff, #c50883ff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  max-width: 330px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+}
+
+.login-page__logo {
+  max-width: 30%;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgb(64, 63, 63);
+  margin: 0 0.5rem 0 1rem;
+}
+
+.login-page__main-title {
+  line-height: 1.8rem;
+  height: 1.8rem;
+  margin: 2rem 1rem 2rem 0.5rem;
+}
+
+.wrapper {
+  width: 330px;
+  padding: 1rem 1rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.login-page__form-title {
+  font-size: 1.6rem;
+  color: rgb(215, 214, 217);
+  margin-bottom: 1.2rem;
+}
+
+form input {
+  width: 92%;
+  outline: none;
+  border: 1px solid #fff;
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.login-page__button {
+  font-size: 1rem;
+  margin-top: 1.4rem;
+  padding: 10px 0;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  width: 90%;
+  background: #dfd9ffff;
+  color: rgb(106, 94, 173);
+  cursor: pointer;
+}
+
+.login-page__button:hover {
+  background: #ff4081ff;
+  color: white;
+}
+
+input:focus {
+  border: 1px solid rgb(192, 192, 192);
+  box-shadow: inset 1px 1px 5px #00000050;
+}
+
+.login-page__member {
+  font-size: 0.9zrem;
+  margin-top: 1.4rem;
+  color: #dfd9ffff;
+}
+
+.login-page__member a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.login-page__member a:hover {
+  text-shadow: 1px 1px 5px black;
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    max-width: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1rem 1rem 1rem;
+  }
+
+  .login-page__logo {
+    max-width: 30%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px rgb(64, 63, 63);
+    margin: 0;
+  }
+
+  .login-page__main-title {
+    line-height: 1.8rem;
+    height: 1.8rem;
+    margin: 1.5rem 0 0 0;
+  }
+}

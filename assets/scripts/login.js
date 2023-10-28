@@ -41,7 +41,7 @@ window.login = function (e) {
       get(userRef).then((snapshot) => {
         const userData = snapshot.val();
         const username = userData.username;
-        alert("Привет, " + username + "! Добро пожаловать на наш сайт!");
+        alert("Добро пожаловать на наш сайт!");
         localStorage.setItem("uid", success.user.uid);
         window.location.replace('userPage.html');
       });
