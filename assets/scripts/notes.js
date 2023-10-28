@@ -31,11 +31,12 @@ const db = getDatabase();
 
 const title = document.getElementById("title");
 const description = document.getElementById("description");
+const duration = document.getElementById("duration");
+const isDone = false;
 const id = localStorage.getItem("uid");
 const addBtn = document.getElementById("add-btn");
-const deleteBtn = document.getElementById("delete-btn");
 
-function deleteTask(id) {
+function deleteTask() {
     const taskRef = ref(db, "Tasks/" + id);
     remove(taskRef)
         .then(() => {
@@ -51,51 +52,62 @@ function deleteTask(id) {
 function displayTasks() {
     const tasksContainer = document.getElementById("tasks-container");
     tasksContainer.innerHTML = "";
-    const tasksRef = ref(db, "Tasks");
+    const tasksRef = ref(db, "Tasks/" + id);
     onChildAdded(tasksRef, (childSnapshot) => {
         const task = childSnapshot.val();
+        const isDoneClass = task.isDone ? "isDone" : "notDone";
         const taskItem = document.createElement("div");
+        taskItem.classList.add("grid-wrap");
         taskItem.innerHTML = `
-                <h3>${task.title}</h3>
-                <p>${task.description}</p>
-                <button class="delete-button">Удалить</button>`;
-            tasksContainer.appendChild(taskItem);
+        <div class="${isDoneClass}">
+        <h3>${task.title}</h3>
+        <p>${task.description}</p>
+        <p>${task.duration}</p>
+        <button class="delete-button">Удалить</button></div>`;
+        tasksContainer.appendChild(taskItem);
 
-            const deleteButton = taskItem.querySelector(".delete-button");
-            deleteButton.addEventListener("click", () => {
-                deleteTask(childSnapshot.key);
-    });
-})
+        const deleteButton = taskItem.querySelector(".delete-button");
+        deleteButton.addEventListener("click", () => {
+            deleteTask(childSnapshot.key);
+        });
+    })
 }
 
 function clearForm() {
     title.value = "";
     description.value = "";
+    duration.value = "";
 }
 
 function setData() {
-    const newTaskRef = push(child(ref(db), "Tasks"));
-    const newTaskId = newTaskRef.key;
-    set(newTaskRef, {
-        title: title.value,
-        description: description.value,
-        uid: newTaskId
-    })
-        .then(() => {
-            alert("Задача успешно добавлена");
-            clearForm();
-            displayTasks();
-        })
-        .catch((error) => {
-            alert("Упс! Произошла ошибка:" + error);
+    try {
+        const user = auth.currentUser;
+        const id = user ? user.uid : null;
+        if (!id) return;
+        
+        // Получаем ссылку на корневую ветку базы данных
+        const dbRef = ref(db);
+        
+        // Получаем ссылку на корневую ветку записей для текущего пользователя
+        const taskRef = push(child(dbRef, "Tasks/" + id));
+        
+        // Генерируем новую ветку с помощью push() и добавляем запись
+        set(taskRef, {
+            title: title.value,
+            description: description.value,
+            duration: Number(duration.value),
+            isDone: isDone
         });
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 window.logout = function () {
     signOut(auth)
         .then(function () {
             alert("Пока!");
-            window.location.href = "login.html";
+            window.location.href = "index.html";
         })
         .catch(function (err) {
             console.log(err);
@@ -116,7 +128,7 @@ function checkAuthentication() {
 
 checkAuthentication();
 
-window.onload = function() {
+window.onload = function () {
     displayTasks();
 };
 

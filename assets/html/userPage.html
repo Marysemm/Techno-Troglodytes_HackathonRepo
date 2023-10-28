@@ -9,24 +9,32 @@
 </head>
 
 <body>
-  <div style="text-align: right">
-    <input type="button" value="logout" class="btn" onclick="logout()" id="logo">
-  </div>
-  <div class="main">
-    <h1>Привет!<span id="user"> </span> <span class="text">Запиши свою задачу!</span></h1>
-  </div>
-  <div class="main">
-    <form action="#">
-      <div>
-        <input type="text" id="title" placeholder="Название задачи">
-        <br>
-        <input type="text" id="description" placeholder="Описание">
-        <br>
-        <button value="Добавить" class="btn" id="add-btn">Добавить задачу</button>
+  <div class="container">
+    <div class="personal_wrapper">
+      <div style="text-align: right">
+        <input type="button" value="logout" class="log-btn" onclick="logout()" id="logo">
       </div>
-    </form>
+      <div class="task-title">
+        <h1 class="task-greetings">Привет!</h1>
+        <p class="task-description">Здесь ты можешь добавлять и удалять свои задачи</p>
+      </div>
+      <div class="task-add">
+        <form action="#">
+          <div class="task-inputs">
+            <div class="inputs-wrap">
+              <input type="text" id="title" placeholder="Название задачи">
+              <input type="text" id="description" placeholder="Описание">
+              <input type="number" id="duration" placeholder="Заложенное время">
+            </div>
+            <div class="btn-wrap">
+              <button value="Добавить" class="add-btn" id="add-btn">Добавить задачу</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="tasks-container" class="tasks-container"></div>
+    </div>
   </div>
-  <div id="tasks-container"></div>
 </body>
 
 <!-- <script src="/assets/scripts/user.js" type="module"></script> -->
