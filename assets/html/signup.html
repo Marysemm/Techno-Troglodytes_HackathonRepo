@@ -9,29 +9,32 @@
   </head>
 
   <body>
+    <div class="header">
+      <img
+        src="../images/photo_2023-10-28 14.56.17.jpeg"
+        alt="Логотип"
+        class="signup-page__logo"
+      />
+      <h1 class="signup-page__main-title">Pomogator</h1>
+    </div>
     <div class="wrapper">
       <div class="personal-account">
-        <h2>Регистрация</h2>
+        <h2 class="signup-page__form-title">Регистрация</h2>
         <form onsubmit="signup(event)">
           <div>
-            <input type="text" name="" placeholder="Full Name" id="fullname" />
+            <input type="text" name="" placeholder="Полное имя" id="fullname" />
           </div>
           <div>
-            <input type="text" name="" placeholder="Email" id="email" />
+            <input type="text" name="" placeholder="Эл. почта" id="email" />
           </div>
           <div>
-            <input
-              type="password"
-              name=""
-              placeholder="Password"
-              id="password"
-            />
+            <input type="password" name="" placeholder="Пароль" id="password" />
           </div>
           <div>
             <input
               type="password"
               name=""
-              placeholder="Confirm Password"
+              placeholder="Повторите пароль"
               id="copassword"
             />
           </div>
