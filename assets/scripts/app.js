@@ -41,26 +41,23 @@ window.signup = function (e) {
 
   createUserWithEmailAndPassword(auth, email.value, password.value)
     .then(function (userCredential) {
-      // Создаем объект с данными пользователя
+      // Создание объекта с данными пользователя
       const userData = {
         fullName: fullName.value,
         email: email.value,
       };
 
-      // Сохраняем данные пользователя в базе данных Realtime Database
+      // Сохранение в базе данных Realtime Database
       set(db, ref(db, 'users/' + userCredential.user.uid), userData)
         .then(() => {
-          // Регистрация успешна
           window.location.replace('login.html');
           alert("Вы зарегистрированы!");
         })
         .catch((error) => {
-          // Произошла ошибка при сохранении данных пользователя
           alert("Ошибка при сохранении данных пользователя: " + error);
         });
     })
     .catch(function (error) {
-      // Произошла ошибка при регистрации пользователя
       alert("Ошибка при регистрации: " + error);
     });
 };
