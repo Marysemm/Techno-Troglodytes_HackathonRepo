@@ -9,7 +9,7 @@ html, body {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: repeating-linear-gradient(to bottom, #2ad1ffff, #c50883ff);
+    background: #2ad1ffff;
     display: flex;
     flex-direction: column;
     align-items: center;
