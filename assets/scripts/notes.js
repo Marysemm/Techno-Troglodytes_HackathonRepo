@@ -36,8 +36,8 @@ const isDone = false;
 const id = localStorage.getItem("uid");
 const addBtn = document.getElementById("add-btn");
 
-function deleteTask() {
-    const taskRef = ref(db, "Tasks/" + id);
+function deleteTask(taskId) {
+    const taskRef = ref(db, "Tasks/" + id + "/" + taskId);
     remove(taskRef)
         .then(() => {
             alert("Задача успешно удалена");
