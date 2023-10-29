@@ -40,8 +40,8 @@ window.login = function (e) {
       const userRef = ref(db, 'users/' + success.user.uid);
       get(userRef).then((snapshot) => {
         const userData = snapshot.val();
-        const username = userData.username;
-        alert("Добро пожаловать на наш сайт!");
+        const username = userData.fullName;
+        alert("Добро пожаловать, " + username + "!");
         localStorage.setItem("uid", success.user.uid);
         window.location.replace('userPage.html');
       });

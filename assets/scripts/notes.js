@@ -29,6 +29,7 @@ const db = getDatabase();
 
 // References
 
+const user = auth.currentUser;
 const title = document.getElementById("title");
 const description = document.getElementById("description");
 const duration = document.getElementById("duration");
@@ -81,7 +82,6 @@ function clearForm() {
 
 function setData() {
     try {
-        const user = auth.currentUser;
         const id = user ? user.uid : null;
         if (!id) return;
         // Получаем ссылку на корневую ветку базы данных
@@ -104,7 +104,7 @@ window.logout = function () {
     signOut(auth)
         .then(function () {
             alert("Пока!");
-            window.location.href = "index.html";
+            window.location.href = "../../index.html";
         })
         .catch(function (err) {
             console.log(err);
@@ -118,7 +118,7 @@ function checkAuthentication() {
             console.log(uid);
         } else {
             // User is signed out
-            window.location.href = "login.html";
+            window.location.href = "../../index.html";
         }
     });
 }
@@ -126,7 +126,18 @@ function checkAuthentication() {
 checkAuthentication();
 
 window.onload = function () {
-    displayTasks();
-};
+    const userRef = ref(db, 'users/' + id);
+    get(userRef).then((snapshot) => {
+        const userData = snapshot.val();
+        const username = userData.fullName;
+        const userSet = document.getElementById("personal-set");
+        const userGreetings = document.createElement("div");
+        userGreetings.classList.add("personal-greetings");
+        userGreetings.innerHTML = `
+        <h4 class="welcome-phrase">Добро пожаловать, ${username}</h4>`;
+        userSet.appendChild(userGreetings);
+        displayTasks();
+    })
+}
 
-addBtn.addEventListener('click', setData);
+    addBtn.addEventListener('click', setData);

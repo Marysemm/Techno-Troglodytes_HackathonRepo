@@ -1,27 +1,12 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-html, body {
-    min-height: 100%
-}
-
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #2ad1ffff;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.container {
-    width: 100%;
-}
-
-.personal_wrapper {
-    padding-inline: 30px;
-    width: 90%;
+.welcome-phrase {
+    margin: 10px;
+    text-align: right;
 }
 
 .task-title {
@@ -38,15 +23,6 @@ body {
 
 .task-description {
     font-size: 18px;
-}
-
-input {
-    outline: none;
-    border: 1px solid #fff;
-    padding: 12px 20px;
-    margin: 10px;
-    border-radius: 10px;
-    background: #fff;
 }
 
 .task-add {
@@ -90,7 +66,6 @@ input {
 
 .log-btn {
     font-size: 1rem;
-    margin-top: 1.4rem;
     padding: 10px 0;
     border-radius: 10px;
     outline: none;

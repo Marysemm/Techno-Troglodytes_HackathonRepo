@@ -4,32 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/styles/normalize.css" />
-    <link rel="stylesheet" href="/assets/styles/login.css" />
+    <link rel="stylesheet" href="/assets/styles/normalize.css">
+    <link rel="stylesheet" href="/assets/styles/style.css">
     <title>Войти</title>
 </head>
 
 <body>
-    <div class="header">
-        <img src="../images/photo_2023-10-28 14.56.17.jpeg" alt="Логотип" class="login-page__logo">
-        <h1 class="login-page__main-title">Pomogator</h1>
-    </div>
-    <div class="main">
-        <form onsubmit="login(event)">
-            <div class="wrapper">
-                <h2 class="login-page__form-title">Войти в аккаунт</h2>
+    <div class="personal-form">
+        <div class="personal__header">
+            <img src="../logo/logo.png" alt="Логотип" class="logo">
+            <h1 class="page__main-title">Pomogator</h1>
+        </div>
+        <div class="personal__main">
+            <form onsubmit="login(event)">
+                <h2 class="page__form-title">Войти в аккаунт</h2>
                 <div>
                     <input type="text" name="email" placeholder="Логин (эл. почта)" id="email">
                 </div>
                 <div>
                     <input type="password" name="password" placeholder="Пароль" id="password">
                 </div>
-                <button id="signupinp" class="login-page__button">Войти</button>
-                <div class="member login-page__member">
+                <button id="signupinp" class="btn">Войти</button>
+                <div class="member">
                     Нет аккаунта? <a href="/assets/html/signup.html">Зарегистрируйтесь!</a>
                 </div>
-        </form>
-    </div>
+            </form>
+        </div>
     </div>
 </body>
 <script type="module" src="/assets/scripts/login.js"></script>
