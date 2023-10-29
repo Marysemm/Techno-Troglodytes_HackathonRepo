@@ -84,13 +84,10 @@ function setData() {
         const user = auth.currentUser;
         const id = user ? user.uid : null;
         if (!id) return;
-        
         // Получаем ссылку на корневую ветку базы данных
         const dbRef = ref(db);
-        
         // Получаем ссылку на корневую ветку записей для текущего пользователя
         const taskRef = push(child(dbRef, "Tasks/" + id));
-        
         // Генерируем новую ветку с помощью push() и добавляем запись
         set(taskRef, {
             title: title.value,

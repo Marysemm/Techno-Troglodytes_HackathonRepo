@@ -19,7 +19,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth()
-const db = getDatabase();
+const db = getDatabase(app);
 
 const fullName = document.getElementById("fullname");
 const email = document.getElementById("email");
@@ -46,9 +46,8 @@ window.signup = function (e) {
         fullName: fullName.value,
         email: email.value,
       };
-
       // Сохранение в базе данных Realtime Database
-      set(db, ref(db, 'users/' + userCredential.user.uid), userData)
+      set(ref(db, 'users/' + userCredential.user.uid), userData)
         .then(() => {
           window.location.replace('login.html');
           alert("Вы зарегистрированы!");
