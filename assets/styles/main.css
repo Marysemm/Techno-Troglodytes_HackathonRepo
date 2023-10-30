@@ -21,7 +21,7 @@
 }
 
 .menu__link {
-    font-family: 'Roboto Mono', monospace;
+    font-family: var(--sec-font);
     font-weight: 600;
     font-size: 25px;
     color: var(--text-color);
@@ -57,7 +57,7 @@
 }
 
 .main__header-text {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--sec-font);
     font-weight: 600;
     font-size: 35px;
     text-transform: uppercase;
@@ -86,8 +86,6 @@
 
 .main block1-text {
     font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
 }
 
 .main-block2 {

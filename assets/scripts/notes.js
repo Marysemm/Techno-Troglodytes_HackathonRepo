@@ -37,7 +37,6 @@ function displayTasks() {
     onChildAdded(tasksRef, (childSnapshot) => {
         const task = childSnapshot.val();
         const isDoneClass = task.isDone ? "isDone" : "notDone";
-        const taskTime = task.duration <= 9 ? `${task.duration} минуты` : `${task.duration} минут`;
         const taskItem = document.createElement("div");
         taskItem.classList.add("grid-wrap");
         taskItem.innerHTML = `
@@ -51,7 +50,7 @@ function displayTasks() {
                 </div>
             </div>
             <p class="task__description isEditable" contenteditable="false">${task.description}</p>
-            <p class="task__duration isEditable" contenteditable="false">${taskTime}</p>
+            <p class="task__duration isEditable" contenteditable="false">${task.duration} мин.</p>
         </div>`;
         tasksContainer.appendChild(taskItem);
         enableEditFields(childSnapshot) 
@@ -95,7 +94,7 @@ function saveTaskChanges(childSnapshot, taskItem, titleField, descriptionField, 
     const taskId = childSnapshot.key;
     const title = titleField.innerText;
     const description = descriptionField.innerText;
-    const duration = durationField.innerText;
+    const duration = Number(durationField.innerText);
     // Save changes to the database
     const taskRef = ref(db, "Tasks/" + id);
     update(child(taskRef, taskId), {

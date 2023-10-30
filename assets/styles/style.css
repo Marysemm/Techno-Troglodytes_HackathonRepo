@@ -1,16 +1,12 @@
 /* Fonts */
 
-@import url('https://fonts.googleapis.com/css2?family=Caudex&family=Montserrat:wght@500;600&family=Roboto+Mono:wght@400;500;600&display=swap');
-
-/*
-font-family: 'Caudex', serif;
-font-family: 'Roboto Mono', monospace;
-font-family: 'Montserrat', sans-serif;
-*/
+@import url('https://fonts.googleapis.com/css2?family=Manrope&family=Play&display=swap');
 
 /* Common style */
 
 :root {
+    --main-font: 'Manrope', sans-serif;
+    --sec-font: 'Play', sans-serif;
     --main-bg-color: linear-gradient(#2ad1ffff, #c50883ff);
     --text-color: #2d2b2b;
     --btn-color-bg: #dfd9ffff;
@@ -43,8 +39,8 @@ font-family: 'Montserrat', sans-serif;
 }
 
 body {
-    font-family: 'Caudex', serif;
-    background: linear-gradient(#2ad1ffff, #c50883ff);
+    font-family: var(--main-font);
+    background: var(--main-bg-color);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
