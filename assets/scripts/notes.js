@@ -37,19 +37,6 @@ const isDone = false;
 const id = localStorage.getItem("uid");
 const addBtn = document.getElementById("add-btn");
 
-function deleteTask(taskId) {
-    const taskRef = ref(db, "Tasks/" + id + "/" + taskId);
-    remove(taskRef)
-        .then(() => {
-            alert("Задача успешно удалена");
-            clearForm();
-            displayTasks();
-        })
-        .catch((error) => {
-            alert("Упс! Произошла ошибка:" + error);
-        });
-}
-
 function displayTasks() {
     const tasksContainer = document.getElementById("tasks-container");
     tasksContainer.innerHTML = "";
@@ -66,7 +53,6 @@ function displayTasks() {
         <p class="task-duration">${task.duration}</p>
         <button class="delete-button">Удалить</button></div>`;
         tasksContainer.appendChild(taskItem);
-
         const deleteButton = taskItem.querySelector(".delete-button");
         deleteButton.addEventListener("click", () => {
             deleteTask(childSnapshot.key);
@@ -74,21 +60,15 @@ function displayTasks() {
     })
 }
 
-function clearForm() {
-    title.value = "";
-    description.value = "";
-    duration.value = "";
-}
+addBtn.addEventListener('click', setData);
 
 function setData() {
     try {
+        const user = auth.currentUser;
         const id = user ? user.uid : null;
         if (!id) return;
-        // Получаем ссылку на корневую ветку базы данных
         const dbRef = ref(db);
-        // Получаем ссылку на корневую ветку записей для текущего пользователя
         const taskRef = push(child(dbRef, "Tasks/" + id));
-        // Генерируем новую ветку с помощью push() и добавляем запись
         set(taskRef, {
             title: title.value,
             description: description.value,
@@ -98,6 +78,25 @@ function setData() {
     } catch (error) {
         console.log(error);
     }
+}
+
+function clearForm() {
+    title.value = "";
+    description.value = "";
+    duration.value = "";
+}
+
+function deleteTask(taskId) {
+    const taskRef = ref(db, "Tasks/" + id + "/" + taskId);
+    remove(taskRef)
+        .then(() => {
+            alert("Задача успешно удалена");
+            clearForm();
+            displayTasks();
+        })
+        .catch((error) => {
+            alert("Упс! Произошла ошибка:" + error);
+        });
 }
 
 window.logout = function () {
@@ -139,5 +138,3 @@ window.onload = function () {
         displayTasks();
     })
 }
-
-    addBtn.addEventListener('click', setData);

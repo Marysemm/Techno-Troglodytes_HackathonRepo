@@ -45,6 +45,9 @@ font-family: 'Montserrat', sans-serif;
 body {
     font-family: 'Caudex', serif;
     background: linear-gradient(#2ad1ffff, #c50883ff);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
     color: var(--text-color);
 }
 

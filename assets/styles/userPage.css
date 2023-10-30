@@ -88,10 +88,6 @@ body {
     grid-gap: 1rem;
 }
 
-.grid-wrap {
-    max-height: 150px;
-}
-
 .task-title,
 .task-description,
 .task-duration,
