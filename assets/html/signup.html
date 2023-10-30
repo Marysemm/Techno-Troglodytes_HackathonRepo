@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../styles/normalize.css">
   <link rel="stylesheet" href="../styles/style.css">
+  <script src="/assets/scripts/app.js" type="module"></script>
   <title>Регистрация</title>
 </head>
 
@@ -19,16 +20,16 @@
       <h2 class="page__form-title">Регистрация</h2>
       <form onsubmit="signup(event)">
         <div>
-          <input type="text" name="" placeholder="Полное имя" id="fullname" />
+          <input type="text" name="fullname" placeholder="Полное имя" id="fullname">
         </div>
         <div>
-          <input type="text" name="" placeholder="Эл. почта" id="email" />
+          <input type="text" name="email" placeholder="Эл. почта" id="email">
         </div>
         <div>
-          <input type="password" name="" placeholder="Пароль" id="password" />
+          <input type="password" name="password" placeholder="Пароль" id="password">
         </div>
         <div>
-          <input type="password" name="password" placeholder="Повторите пароль" id="copassword" />
+          <input type="password" name="copassword" placeholder="Повторите пароль" id="copassword">
         </div>
         <div>
           <button id="signupinp" value="Регистрация" class="btn">
@@ -43,6 +44,5 @@
     </div>
   </div>
 </body>
-<script src="/assets/scripts/app.js" type="module"></script>
 
 </html>

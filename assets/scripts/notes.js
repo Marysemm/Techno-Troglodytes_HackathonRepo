@@ -1,15 +1,9 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
-import { getDatabase, ref, get, set, child, push, remove, onChildAdded } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js";
-import {
-    getAuth,
-    signOut,
-    onAuthStateChanged,
-} from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
-
+import { getDatabase, ref, get, set, update, child, push, remove, onChildAdded } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js";
+import {getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -29,7 +23,6 @@ const db = getDatabase();
 
 // References
 
-const user = auth.currentUser;
 const title = document.getElementById("title");
 const description = document.getElementById("description");
 const duration = document.getElementById("duration");
@@ -50,22 +43,85 @@ function displayTasks() {
         taskItem.innerHTML = `
         <div class="task">
             <div class="task__header">
-                <h3 class="task__title">${task.title}</h3>
+                <h3 class="task__title isEditable" contenteditable="false">${task.title}</h3>
                 <div class="task__options">
                     <span class="${isDoneClass}"><i class="fa-solid fa-clipboard-check"></i></span>
                     <button class="task__options-btn edit-btn"><i class="fa-regular fa-pen-to-square"></i></button>
                     <button class="task__options-btn del-btn"><i class="fa-solid fa-trash"></i></button>
                 </div>
             </div>
-            <p class="task__description">${task.description}</p>
-            <p class="task__duration">${taskTime}</p>
+            <p class="task__description isEditable" contenteditable="false">${task.description}</p>
+            <p class="task__duration isEditable" contenteditable="false">${taskTime}</p>
         </div>`;
         tasksContainer.appendChild(taskItem);
+        enableEditFields(childSnapshot) 
         const deleteButton = taskItem.querySelector(".del-btn");
         deleteButton.addEventListener("click", () => {
             deleteTask(childSnapshot.key);
         });
     })
+}
+
+function enableEditFields(childSnapshot) {
+    const editButtons = document.querySelectorAll('.edit-btn');
+    editButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const taskItem = button.closest('.task');
+            const titleField = taskItem.querySelector('.task__title');
+            const descriptionField = taskItem.querySelector('.task__description');
+            const durationField = taskItem.querySelector('.task__duration');
+            // Enable contenteditable attribute
+            titleField.contentEditable = 'true';
+            descriptionField.contentEditable = 'true';
+            durationField.contentEditable = 'true';
+            // Add class to indicate it's editable
+            titleField.classList.add('isEditable');
+            descriptionField.classList.add('isEditable');
+            durationField.classList.add('isEditable');
+            // Change button class to save-btn
+            button.classList.remove('edit-btn');
+            button.classList.add('save-btn');
+            // Change button text to "Save"
+            button.innerHTML ='<i class="fa-regular fa-floppy-disk"></i>';
+            // Add event listener to save changes
+            button.addEventListener('click', () => {
+                saveTaskChanges(childSnapshot, taskItem, titleField, descriptionField, durationField, button);
+            });
+        });
+    });
+}
+
+function saveTaskChanges(childSnapshot, taskItem, titleField, descriptionField, durationField, button) {
+    const taskId = childSnapshot.key;
+    const title = titleField.innerText;
+    const description = descriptionField.innerText;
+    const duration = durationField.innerText;
+    // Save changes to the database
+    const taskRef = ref(db, "Tasks/" + id);
+    update(child(taskRef, taskId), {
+        title: title,
+        description: description,
+        duration: duration
+    })
+    .then(() => {
+        alert("Изменения сохранены");
+        // Disable contenteditable attribute
+        titleField.contentEditable = 'false';
+        descriptionField.contentEditable = 'false';
+        durationField.contentEditable = 'false';
+        // Remove editable class
+        titleField.classList.remove('isEditable');
+        descriptionField.classList.remove('isEditable');
+        durationField.classList.remove('isEditable');
+        // Change button class and text back to edit
+        button.classList.remove('save-btn');
+        button.classList.add('edit-btn');
+        // Change button text back to "Edit"
+        button.innerHTML = '<i class="fa-regular fa-pen-to-square"></i>';
+    })
+    .catch((error) => {
+        alert("Упс! Произошла ошибка:" + error);
+    });
 }
 
 addBtn.addEventListener('click', setData);
@@ -106,6 +162,7 @@ function deleteTask(taskId) {
             alert("Упс! Произошла ошибка:" + error);
         });
 }
+
 
 window.logout = function () {
     signOut(auth)

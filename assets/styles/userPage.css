@@ -90,13 +90,10 @@ body {
     margin-block: 20px;
 }
 
-.grid-wrap {
+.task {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-.task {
     background-color: rgba(255, 255, 255, 0.422);
     border-radius: 10px;
     padding: 10px;
@@ -138,6 +135,7 @@ body {
 }
 
 .edit-btn,
+.save-btn,
 .del-btn {
     font-size: 20px;
     border: none;
