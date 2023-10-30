@@ -44,16 +44,24 @@ function displayTasks() {
     onChildAdded(tasksRef, (childSnapshot) => {
         const task = childSnapshot.val();
         const isDoneClass = task.isDone ? "isDone" : "notDone";
+        const taskTime = task.duration <= 9 ? `${task.duration} минуты` : `${task.duration} минут`;
         const taskItem = document.createElement("div");
         taskItem.classList.add("grid-wrap");
         taskItem.innerHTML = `
-        <div class="${isDoneClass}">
-        <h3 class="task-title">${task.title}</h3>
-        <p class="task-description">${task.description}</p>
-        <p class="task-duration">${task.duration}</p>
-        <button class="delete-button">Удалить</button></div>`;
+        <div class="task">
+            <div class="task__header">
+                <h3 class="task__title">${task.title}</h3>
+                <div class="task__options">
+                    <span class="${isDoneClass}"><i class="fa-solid fa-clipboard-check"></i></span>
+                    <button class="task__options-btn edit-btn"><i class="fa-regular fa-pen-to-square"></i></button>
+                    <button class="task__options-btn del-btn"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+            <p class="task__description">${task.description}</p>
+            <p class="task__duration">${taskTime}</p>
+        </div>`;
         tasksContainer.appendChild(taskItem);
-        const deleteButton = taskItem.querySelector(".delete-button");
+        const deleteButton = taskItem.querySelector(".del-btn");
         deleteButton.addEventListener("click", () => {
             deleteTask(childSnapshot.key);
         });

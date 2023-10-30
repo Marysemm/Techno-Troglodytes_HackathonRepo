@@ -84,48 +84,78 @@ body {
 
 .tasks-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 1rem;
+    box-sizing: border-box;
+    margin-block: 20px;
 }
 
-.task-title,
-.task-description,
-.task-duration,
-.delete-button {
-    margin: 15px;
+.grid-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.delete-button {
-    width: 100px;
-    height: 50px;
-    font-size: 1rem;
-    margin-top: 1.4rem;
-    padding: 10px 0;
+.task {
+    background-color: rgba(255, 255, 255, 0.422);
     border-radius: 10px;
-    outline: none;
+    padding: 10px;
+    height: 100%;
+}
+
+.task:hover {
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.task__header,
+.task__description,
+.task__duration {
+    padding: 5px 10px;
+}
+
+.task__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.task__title {
+    flex: 0 1 70%;
+}
+
+.task__options {
+    flex: 0 1 30%;
+    text-align: right;
+}
+
+.task__options-btn {
+    margin-left: 10px;
+}
+
+.task__description {
+    max-height: 100px;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+.edit-btn,
+.del-btn {
+    font-size: 20px;
     border: none;
-    background: #ff4081ff;
-    color: white;
+    outline: none;
+    background-color: transparent;
     cursor: pointer;
 }
 
-.delete-button:hover {
-    background: #dfd9ffff;
-    color: #222;
-}
-
-.isDone,
-.notDone {
-    background-color: #ffffffb8;
-    padding: 10px 0;
-    border-radius: 10px;
+.edit-btn:hover,
+.del-btn:hover {
+    filter: drop-shadow(1px 1px 1px #2d2b2ba5);
 }
 
 .isDone {
-    color: #222;
-    background-color: #6FFF87FF;
+    font-size: 20px;
+    color: rgb(34 134 50);
 }
 
 .notDone {
-    color: #222;
+    display: none;
 }
