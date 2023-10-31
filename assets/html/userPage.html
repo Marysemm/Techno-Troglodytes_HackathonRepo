@@ -1,43 +1,63 @@
 <!DOCTYPE html>
 <html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/styles/normalize.css" />
+    <link rel="stylesheet" href="/assets/styles/style.css" />
+    <link rel="stylesheet" href="/assets/styles/userPage.css" />
+    <script
+      src="https://kit.fontawesome.com/e9756da1d0.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/assets/scripts/notes.js" type="module"></script>
+    <title>Личный аккаунт</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/assets/styles/normalize.css">
-  <link rel="stylesheet" href="/assets/styles/style.css">
-  <link rel="stylesheet" href="/assets/styles/userPage.css">
-  <script src="https://kit.fontawesome.com/e9756da1d0.js" crossorigin="anonymous"></script>
-  <script src="/assets/scripts/notes.js" type="module"></script>
-  <title>Личный аккаунт</title>
-</head>
+  <body>
+    <div class="container">
+      <div class="personal_wrapper">
+        <div class="personal-set" id="personal-set"></div>
+        <div style="text-align: right">
+          <input
+            type="button"
+            value="Выйти"
+            class="log-btn"
+            onclick="logout()"
+            id="logo"
+          />
+        </div>
 
-<body>
-  <div class="container">
-    <div class="personal_wrapper">
-      <div class="personal-set" id="personal-set"></div>
-      <div style="text-align: right">
-        <input type="button" value="Выйти" class="log-btn" onclick="logout()" id="logo">
-      </div>
-      <div class="task-title">
-        <h1 class="task-greetings">Привет!</h1>
-        <p class="task-description">Здесь ты можешь добавлять и удалять свои задачи</p>
-      </div>
-      <div class="task-add">
-        <form action="#">
-          <div class="task-inputs">
-            <div class="inputs-wrap">
-              <input type="text" id="title" placeholder="Название задачи">
-              <input type="text" id="description" placeholder="Описание">
-              <input type="number" id="duration" placeholder="Заложенное время">
+        <div class="task-add_wrapper">
+          <div class="task-title">
+            <div class="task-title__inner-wrapper">
+              <h1 class="task-greetings">Привет!</h1>
+              <p class="task-description">
+                Здесь ты можешь добавлять и удалять свои задачи
+              </p>
             </div>
-            <button value="Добавить" class="add-btn" id="add-btn">Добавить задачу</button>
           </div>
-        </form>
+          <div class="task-add">
+            <form action="#">
+              <div class="task-inputs">
+                <div class="inputs-wrap">
+                  <input type="text" id="title" placeholder="Название задачи" />
+                  <input type="text" id="description" placeholder="Описание" />
+                  <input
+                    type="number"
+                    id="duration"
+                    placeholder="Заложенное время"
+                  />
+                </div>
+                <button value="Добавить" class="add-btn" id="add-btn">
+                  Добавить задачу
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div id="tasks-container" class="tasks-container"></div>
       </div>
-      <div id="tasks-container" class="tasks-container"></div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>
