@@ -67,55 +67,56 @@
     text-align: center;
 }
 
-.main-blocks {
+.main__body {
     display: grid;
     grid-template-columns: repeat(2, 50%);
+    align-items: center;
     height: 100%;
-
+    padding-block: 20px;
 }
 
-.main-block1 {
-    display: grid;
-    width: 100%;
-    height: 90vh;
-    margin-left: 5%;
-    background: white;
-    opacity: 70%;
+.main__body-content {
+    height: fit-content;
+    background-color: rgba(255, 255, 255, 0.422);
     border-radius: 10px;
+    padding: 25px;
 }
 
-.main block1-text {
+.content-text {
+    font-size: 22px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+ol[title]::before {
+    content: attr(title);
     font-size: 20px;
 }
 
-.main-block2 {
-    display: grid;
-    width: 100%;
+.content-list__item {
+    font-size: 18px;
+    margin: 20px;
 }
 
-.img-tired {
-    width: 70%;
-    height: 100%;
-    margin-left: 15%;
+.card {
+    display: grid;
+    justify-items: center;
+    width: 500px;
+    margin-left: 130px;
+    padding: 0 15px 20px 15px;
 }
 
-.main__button {
-    width: 40%;
-    height: 70%;
-    display: grid;
-    align-items: center;
-    align-content: center;
-    margin-left: 30%;
+.card:hover {
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
 }
 
-.button span {
-    padding-top: 20px;
-    justify-self: flex-end;
+.card-img {
+    width: 500px;
+    height: 500px;
 }
 
-.main__button:hover {
-    background-color: #ff4081ff;
-    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
+.main__card-button {
+    width: 180px;
+    height: 50px;
 }
