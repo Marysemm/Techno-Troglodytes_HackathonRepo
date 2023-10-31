@@ -50,7 +50,7 @@ function displayTasks() {
                 </div>
             </div>
             <p class="task__description isEditable" contenteditable="false">${task.description}</p>
-            <p class="task__duration isEditable" contenteditable="false">${task.duration} мин.</p>
+            <p class="task__duration isEditable" contenteditable="false">${task.duration}</p><span>мин.</span>
         </div>`;
         tasksContainer.appendChild(taskItem);
         enableEditFields(childSnapshot) 
