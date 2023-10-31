@@ -55,9 +55,17 @@
                     </ol>
                 </div>
                 <div class="main__body-card">
-                    <div class="card">
-                        <img class="card-img" src="/assets/images/main-pic_front.png" alt="">
-                        <button class="btn main__card-button">Попробовать!</button>
+                    <div class="card" ontouchstart="this.classList.toggle('hover')">
+                        <div class="card__inner">
+                            <div class="card__inner-front">
+                                <img class="card-img" src="/assets/images/main-pic_front.png" alt="">
+                                <button class="btn main__card-button">Попробуй</button>
+                            </div>
+                            <div class="card__inner-back">
+                                <img class="card-img" src="/assets/images/main-pic_back.png" alt="">
+                                <button class="btn main__card-button" onclick="window.location.href = '/assets/html/signup.html'">Зарегистрироваться</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

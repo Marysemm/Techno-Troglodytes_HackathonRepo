@@ -99,16 +99,53 @@ ol[title]::before {
 }
 
 .card {
-    display: grid;
-    justify-items: center;
+    height: 100%;
     width: 500px;
     margin-left: 130px;
-    padding: 0 15px 20px 15px;
+    perspective: 1000;
 }
 
-.card:hover {
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+.card__inner {
+    display: grid;
+    justify-items: center;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    position: relative;
+    padding: 0 15px 20px 15px;
     border-radius: 10px;
+}
+
+.card__inner:hover {
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover .card__inner,
+.card.hover .card__inner {
+    transform: rotateY(180deg);
+}
+
+.card__inner,
+.card__inner-front,
+.card__inner-back {
+    width: 500px;
+    height: 600px;
+}
+
+.card__inner-front,
+.card__inner-back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card__inner-front {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.card__inner-back {
+    transform: rotateY(180deg);
 }
 
 .card-img {
@@ -117,6 +154,7 @@ ol[title]::before {
 }
 
 .main__card-button {
+    margin-inline: 30%;
     width: 180px;
     height: 50px;
 }
