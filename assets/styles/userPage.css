@@ -11,13 +11,36 @@ body {
 }
 
 .task-title {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: #ffffff2f;
-  border-radius: 10px;
   width: 60%;
   padding-block: 30px;
+}
+
+.task-title_inner-wrapper {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  background-color: #ffffff2f;
+  border-radius: 10px;
+  height: 100%;
+  padding: 20px 20px 20px 25px;
+}
+
+.task-title_text-box {
+  grid-column: 1/2;
+}
+
+.task-title_image-box {
+  grid-column: 2/3;
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.task-title_image-box > img {
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  display: block;
+  box-sizing: border-box;
 }
 
 .task-greetings,
@@ -26,8 +49,28 @@ body {
   font-family: var(--main-font);
 }
 
+.task-greetings {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  font-family: "Montserrat", sans-serif;
+}
+
 .task-description {
-  font-size: 18px;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.3rem;
+}
+
+.task-description_first-paragraph {
+  margin-bottom: 1.5rem;
+}
+
+.task-description_second-paragraph {
+  margin-bottom: 1.5rem;
+}
+
+.user-page_span-bold {
+  font-weight: 900;
 }
 
 .task-add_wrapper {
