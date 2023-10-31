@@ -145,6 +145,8 @@ form input {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 1rem;
+  grid-auto-rows: minmax(100px, auto);
+  grid-auto-flow: dense;
   box-sizing: border-box;
   margin-block: 20px;
 }
@@ -152,7 +154,6 @@ form input {
 .task {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   font: var(--main-font);
   background-color: rgba(255, 255, 255, 0.422);
   border-radius: 10px;
@@ -166,8 +167,16 @@ form input {
 
 .task__header,
 .task__description,
-.task__duration {
+.task__time {
   padding: 5px 10px;
+}
+
+.task__time {
+  display: flex;
+}
+
+.task__duration {
+  margin-right: 5px;
 }
 
 .task__header {
@@ -186,12 +195,6 @@ form input {
 
 .task__options-btn {
   margin-left: 10px;
-}
-
-.task__description {
-  max-height: 100px;
-  word-wrap: break-word;
-  overflow: hidden;
 }
 
 .edit-btn,
