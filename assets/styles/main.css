@@ -3,34 +3,14 @@
     justify-content: space-between;
 }
 
-.menu__list {
+.account {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     width: 50%;
 }
 
-.menu__list-items {
-    display: flex;
-    align-items: center;
-}
-
-.menu__list-item {
-    list-style: none;
-    padding-inline: 10px;
-}
-
-.menu__link {
-    font-family: var(--sec-font);
-    font-weight: 600;
-    font-size: 25px;
-    color: var(--text-color);
-    margin-inline: 25px;
-    text-decoration: none;
-    white-space: nowrap;
-}
-
-.personal-account_icon {
+.account__icon {
     margin-left: 25px;
 }
 
@@ -38,7 +18,7 @@
     width: 20%;
 }
 
-.account_icon {
+.icon {
     width: 45px;
 }
 
@@ -73,6 +53,7 @@
     align-items: center;
     height: 100%;
     padding-block: 20px;
+    margin-bottom: 20px;
 }
 
 .main__body-content {
@@ -99,16 +80,52 @@ ol[title]::before {
 }
 
 .card {
-    display: grid;
-    justify-items: center;
+    height: 100%;
     width: 500px;
-    margin-left: 130px;
-    padding: 0 15px 20px 15px;
+    margin-left: 100px;
 }
 
-.card:hover {
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+.card__inner {
+    display: grid;
+    justify-items: center;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    position: relative;
+    padding: 0 15px 20px 15px;
     border-radius: 10px;
+}
+
+.card__inner:hover {
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover .card__inner,
+.card.hover .card__inner {
+    transform: rotateY(180deg);
+}
+
+.card__inner,
+.card__inner-front,
+.card__inner-back {
+    width: 500px;
+    height: 600px;
+}
+
+.card__inner-front,
+.card__inner-back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card__inner-front {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.card__inner-back {
+    transform: rotateY(180deg);
 }
 
 .card-img {
@@ -117,6 +134,53 @@ ol[title]::before {
 }
 
 .main__card-button {
+    margin-inline: 30%;
     width: 180px;
     height: 50px;
+}
+
+.main__about-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-us__title {
+    margin-block: 15px;
+    font-family: var(--sec-font);
+    font-size: 25px;
+}
+
+.participants {
+    display: flex;
+}
+
+.participant {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    padding: 10px;
+}
+
+.participant__avatar {
+    margin-right: 10px;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.participant__info {
+    color: var(--text-color);
+}
+
+.participant__name {
+    color: var(--text-color);
+}
+
+.participant__github {
+    text-decoration: none;
+    color: var(--text-color);
 }
