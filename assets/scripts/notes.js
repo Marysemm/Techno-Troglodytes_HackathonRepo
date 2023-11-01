@@ -167,7 +167,7 @@ window.logout = function () {
     signOut(auth)
         .then(function () {
             alert("Пока!");
-            window.location.href = "Techno-Troglodytes_HackathonRepo/";
+            window.location.href = "";
         })
         .catch(function (err) {
             console.log(err);
@@ -181,7 +181,7 @@ function checkAuthentication() {
             console.log(uid);
         } else {
             // User is signed out
-            window.location.href = "Techno-Troglodytes_HackathonRepo/";
+            window.location.href = "";
         }
     });
 }
