@@ -1,76 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/styles/normalize.css">
-    <link rel="stylesheet" href="/assets/styles/style.css">
-    <link rel="stylesheet" href="/assets/styles/main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/styles/normalize.css" />
+    <link rel="stylesheet" href="/assets/styles/style.css" />
+    <link rel="stylesheet" href="/assets/styles/main.css" />
     <script async src="/assets/scripts/main.js"></script>
     <title>Pomogator</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <header class="header">
-            <nav class="menu">
-                <div class="app-logo">
-                    <a href="index.html"><img class="logo_icon" src="/assets/logo/logo.png" alt="icon for account"></a>
-                </div>
-                <div class="account">
-                    <div class="account__icon">
-                        <a href="/assets/html/signup.html"><img class="icon" src="/assets/logo/user-icon.png"
-                                alt="icon for account"></a>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <!--Главная Страница-->
-        <main class="main">
-            <div class="main__header">
-                <h1 class="main__header-text">В чем магия приложения Pomogator?</h1>
+      <header class="header">
+        <nav class="menu">
+          <div class="app-logo">
+            <a href="index.html"
+              ><img
+                class="logo_icon"
+                src="/assets/logo/logo.png"
+                alt="icon for account"
+            /></a>
+          </div>
+          <div class="account">
+            <div class="account__icon">
+              <a href="/assets/html/signup.html"
+                ><img
+                  class="icon"
+                  src="/assets/logo/user-icon.png"
+                  alt="icon for account"
+              /></a>
             </div>
-            <div class="main__body">
-                <div class="main__body-content">
-                    <p class="content-text">
-                        <strong>Pomogator</strong> - это простое волшебство! С легкостью добавляйте, редактируйте и
-                        удаляйте задачи в
-                        нашем удобном личном кабинете. А с мобильным приложением Pomogator у вас всегда будет под рукой
-                        возможность запустить таймер к каждой задаче. Как только действие выполнено, задача
-                        автоматически отметится как выполненная.
-                    </p>
-                    <ol class="content-list" title="Преимущества Pomogator:">
-                        <li class="content-list__item">Удобство использования: интуитивно понятный интерфейс позволяет
-                            создавать и управлять задачами с минимальными усилиями.</li>
-                        <li class="content-list__item">Эффективное управление временем: таймеры помогут вам планировать
-                            выполнение задач и улучшить вашу продуктивность.</li>
-                        <li class="content-list__item">Мобильная свобода: доступ к вашим задачам и таймерам в любое
-                            время, в любом месте. Будьте проактивны и продолжайте выполнение задач, даже если вы не у
-                            компьютера.</li>
-                    </ol>
-                </div>
-                <div class="main__body-card">
-                    <div class="card" ontouchstart="this.classList.toggle('hover')">
-                        <div class="card__inner">
-                            <div class="card__inner-front">
-                                <img class="card-img" src="/assets/images/main-pic_front.png" alt="">
-                                <button class="btn main__card-button">Попробуй</button>
-                            </div>
-                            <div class="card__inner-back">
-                                <img class="card-img" src="/assets/images/main-pic_back.png" alt="">
-                                <button class="btn main__card-button" onclick="window.location.href = '/assets/html/signup.html'">Зарегистрироваться</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </nav>
+      </header>
+      <!--Главная Страница-->
+      <main class="main">
+        <div class="main__header">
+          <h1 class="main__header-text">В чем магия приложения Pomogator?</h1>
+        </div>
+        <div class="main__body">
+          <div class="main__body-content">
+            <div class="main__body-paragraph">
+              <p class="content-text content-text_first-paragraph">
+                <strong>Pomogator</strong> — это простое волшебство! С легкостью
+                добавляйте, редактируйте и удаляйте задачи в нашем удобном
+                личном кабинете.
+              </p>
+              <p class="content-text content-text_second-paragraph">
+                А с <strong>мобильным приложением Pomogator</strong> у вас
+                всегда будет под рукой возможность запустить таймер к каждой
+                задаче. Как только действие выполнено, задача автоматически
+                отметится как завершенная.
+              </p>
             </div>
-            <div class="main__about-us">
-                <h3 class="about-us__title">Участвовали в создании</h3>
-                <div class="participants" id="participants"></div>
+            <div class="main__body-list">
+              <ol class="content-list" title="Преимущества Pomogator:">
+                <li class="content-list__item">
+                  <strong>Удобство использования:</strong> <br />Интуитивно
+                  понятный интерфейс позволяет создавать и управлять задачами с
+                  минимальными усилиями.
+                </li>
+                <li class="content-list__item">
+                  <strong>Эффективное управление временем:</strong>
+                  <br />Таймеры помогут вам планировать выполнение задач и
+                  улучшить вашу продуктивность.
+                </li>
+                <li class="content-list__item">
+                  <strong>Мобильная свобода:</strong> <br />Доступ к вашим
+                  задачам и таймерам в любое время, в любом месте. Будьте
+                  проактивны и продолжайте выполнение задач, даже если вы не у
+                  компьютера.
+                </li>
+              </ol>
             </div>
-        </main>
+          </div>
+          <div class="main__body-card">
+            <div class="card" ontouchstart="this.classList.toggle('hover')">
+              <div class="card__inner">
+                <div class="card__inner-front">
+                  <img
+                    class="card-img"
+                    src="/assets/images/main-pic_front.png"
+                    alt=""
+                  />
+                  <button class="btn main__card-button">Попробуй</button>
+                </div>
+                <div class="card__inner-back">
+                  <img
+                    class="card-img"
+                    src="/assets/images/main-pic_back.png"
+                    alt=""
+                  />
+                  <button
+                    class="btn main__card-button"
+                    onclick="window.location.href = '/assets/html/signup.html'"
+                  >
+                    Зарегистрироваться
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="main__about-us">
+          <h3 class="about-us__title">Участвовали в создании</h3>
+          <div class="participants" id="participants"></div>
+        </div>
+      </main>
     </div>
-</body>
-
+  </body>
 </html>
